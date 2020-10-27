@@ -1,0 +1,10 @@
+name: "Create Tar Release"
+outputs:
+  tarname:
+    description: "Name of the tar file created"
+    value: ${{ env.TARNAME }}
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/create-tar.sh
+      shell: bash
