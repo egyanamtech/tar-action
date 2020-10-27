@@ -10,5 +10,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: sudo ${{ github.action_path }}/create-tar.sh
+    - run: bash ${{ github.action_path }}/create-tar.sh
       shell: bash
