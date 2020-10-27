@@ -1,6 +1,6 @@
 #!/bin/bash
 jq \
-    --arg pid $(jq -r ".type" input.json | fold -1 | head -n 1)$(echo $SHA | fold -w 7 | head -n 1) \
+    --arg pid $(jq -r ".type" input.json | fold -1 | head -n 1)$(echo $GITHUB_SHA | fold -w 7 | head -n 1) \
     '. | {pid: $pid, name: .name, version: .version, fields: .fields, type: .type, runner_script: .runner_script}' \
     input.json > data.json
 NAME=$(jq -r ".name" input.json)
