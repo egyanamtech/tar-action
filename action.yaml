@@ -1,4 +1,8 @@
 name: "Create Tar Release"
+inputs:
+  SHA:
+    description: "The SHA sum of the commit"
+    required: true
 outputs:
   tarname:
     description: "Name of the tar file created"
